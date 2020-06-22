@@ -24,7 +24,7 @@ $(document).ready(() => {
 
          let test = $('.slideshow__block--active').find('.slideshow__img__two').attr('src');
          $('.wrapper').css({
-            'background' :  "url(" + test +")",
+            'background' :  "url(../." + test +")",
             'background-size' : '100%'
          });
       }
@@ -44,8 +44,9 @@ $(document).ready(() => {
       $('.text__info').text(result);
 
       let test = $('.slideshow__block--active').find('.slideshow__img__two').attr('src');
+      console.log(test)
       $('.wrapper').css({
-         'background' :  "url(" + test +")",
+         'background' :  "url(../." + test +")",
          'background-size' : '100%',
          'transition' : '0.3s',
       });
