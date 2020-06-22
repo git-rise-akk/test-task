@@ -1,0 +1,39 @@
+.info {
+    width: 253px;
+    height: 62px;
+    background-color: #1e1d2c;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+  
+}
+
+.favorites__link {
+    margin-bottom: 11px;
+}
+
+.info__title {
+    color: #fff;
+    border-bottom: 1px dashed #fff;
+    margin-bottom: 10px;
+}
+
+.info__block {
+    background: #fff;
+    position: absolute;
+    margin: 0 auto;
+    width: 516px;
+    padding: 30px 40px;
+    z-index: 1;
+    display: none;
+    top: 100%;
+    left: 0;
+    transition: .5s;
+}
+
+.content {
+    margin: 0 auto;
+}
