@@ -1,13 +1,15 @@
-.wrapper {
-    background-image: url(../../img/background/bg2.jpg);
-    background-size: 100%;
+body {
     width: 100%;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
+    height: 100%;
+    margin: 0;
 }
 
-.wrapper__content {
-    flex: 1;
-}
+.wrapper {
+    
+    width: 100%;
+    height: 100vh;
 
+    @include tablets {
+        height: 100%;
+    }
+}

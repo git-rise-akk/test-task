@@ -1,58 +1,51 @@
 $(document).ready(() => {
+    
+    $(".package__block").on("click", function(e) {
 
-   //banner
+        if ($(this).hasClass('package__block--disabled')) {
+            null
+        }else {
+            $(this).toggleClass('package__block--active')
+        }
+       
+        let noteOne = ' <div class="noteTow"> Чего сидишь? Порадуй котэ, <a href="#" class="colortext">купи.</a> </div>';
+        let noteTwo = $(this).closest('.package').find('.note').attr('data-text-one');
+        let packageText = $(this).find(".package__text").attr("data-text");
 
-   $('.arrow').on('click', () => {
-      $(".info__block").css("display", "block");
-   });
+        if ($(this).hasClass('package__block--active') === true ) {
+            $(this).next('.note').text(noteTwo);
+            $(this).find('.package__text').text(packageText);
+        }else {
+            $(this).next('.note').html(noteOne);
+            $(this).find('.package__text').text('Сказочное заморское яство');
+        }
 
-   $('.exit').on('click', () => {
-      $(".info__block").css("display", "none");
-   });
+        if ($(this).hasClass('package__block--disabled') === true ) {
+            $(this).next('.note').text('Печалька, с курой закончился.').css("color", "#ffff66");
+        }
 
- //slideshow 
+    });
 
-   $(".slideshow__block").on("click", toogleClass);
+   
+    $("body").on("click", ".colortext", function(e) {
+        e.preventDefault();
 
-   function toogleClass () {
-      if ( $(this).hasClass("slideshow__block--active") === false) {
-         $(".slideshow__block").removeClass("slideshow__block--active");
-         $(this).addClass("slideshow__block--active");
+        $(this).closest('.package').find('.package__block').toggleClass('package__block--active')
 
-         let result = $('.slideshow__block--active').attr('data-text');
-         $('.text__info').text(result);
-
-         let test = $('.slideshow__block--active').find('.slideshow__img__two').attr('src');
-         $('.wrapper').css({
-            'background' :  "url(../." + test +")",
-            'background-size' : '100%'
-         });
-      }
-   }
+        let noteOne = ' <div class="noteTow"> Чего сидишь? Порадуй котэ, <a href="#" class="colortext">купи.</a> </div>';
+        let noteTwo = $(".package").find('.note').attr('data-text-one');
+        let packageText = $(".package").find(".package__text").attr("data-text");
 
 
-   var currentSlide = 0;
+        if ($(this).closest('.package').find(".package__block").hasClass('package__block--active') === true ) { 
+            $(this).closest('.package').find('.package__text').text(packageText);
+            $(this).closest('.package').find('.note').text(noteTwo);
+        }else {
+            $(this).closest('.package').find('.package__text').text('Сказочное заморское яство');
+        }
+    });
 
-   setTimeout(changeSlide, 2000);
+    $(".package__block--disabled").closest('.package').find('.note').css("color", "#ffff66");
 
-   function changeSlide() {
-      currentSlide = ( $('.slideshow__block').length == currentSlide +1) ? 0 : currentSlide +1;
-      $('.slideshow__block--active').removeClass('slideshow__block--active');
-      $('.slideshow__block[data-id='+currentSlide+']').addClass('slideshow__block--active');
-
-      let result = $('.slideshow__block--active').attr('data-text');
-      $('.text__info').text(result);
-
-      let test = $('.slideshow__block--active').find('.slideshow__img__two').attr('src');
-      console.log(test)
-      $('.wrapper').css({
-         'background' :  "url(../." + test +")",
-         'background-size' : '100%',
-         'transition' : '0.3s',
-      });
-
-      setTimeout(changeSlide, 2000);
+});
  
-   } 
-}); 
-
