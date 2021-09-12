@@ -1,6 +1,6 @@
 body {
   font-family: exo;
-  background: url(/img/background.png);
+  background: url(../../img/background.png);
 }
 
 ul {
@@ -23,6 +23,18 @@ img {
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "TrebuchetMS-Bold";
+  src: url("../../fonts/TrebuchetMS-Bold.woff2") format("woff2"), url("../../fonts/TrebuchetMS-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TrebuchetMS";
+  src: url("../../fonts/TrebuchetMS.woff2") format("woff2"), url("../../fonts/TrebuchetMS.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   width: 100%;
   height: 100%;
@@ -41,30 +53,42 @@ body {
 
 .title {
   text-align: center;
-  font-size: 36px;
+  font-size: 2.25rem;
   color: #ffffff;
-  padding: 47px 0 23px;
+  padding: 2.9375rem 0 1.4375rem;
 }
 
 .packages {
   margin: 0 auto;
-  max-width: 1120px;
+  max-width: 70rem;
+  padding: 0 1.875rem;
 }
 @media screen and (max-width: 768px) {
   .packages {
-    height: 1127px;
+    height: 70.4375rem;
     display: flex;
   }
 }
+@media screen and (max-width: 480px) {
+  .packages {
+    padding: 0 1.25rem;
+  }
+}
 
+.package:first-child, .package:nth-child(2) {
+  margin-bottom: 2rem;
+}
 @media screen and (max-width: 768px) {
+  .package {
+    margin: 0 0.625rem;
+  }
   .package:nth-child(2) {
     align-self: flex-start;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   .package {
-    margin-bottom: 20px;
+    margin: 0 auto;
   }
 }
 
@@ -75,22 +99,16 @@ body {
 }
 @media screen and (max-width: 768px) {
   .packages__list {
-    align-items: flex-end;
-  }
-}
-@media screen and (max-width: 672px) {
-  .packages__list {
-    display: block;
-    margin: 0 auto;
+    justify-content: center;
   }
 }
 
 .package__block {
   text-align: left;
-  max-width: 320px;
+  max-width: 20rem;
   background: #fff;
   border: 4px solid #1698d9;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   position: relative;
   -webkit-clip-path: polygon(0% 10%, 15% 0%, 100% 0%, 100% 0%, 100% 100%, 100% 100%, 0% 100%, 0 100%);
           clip-path: polygon(0% 10%, 15% 0%, 100% 0%, 100% 0%, 100% 100%, 100% 100%, 0% 100%, 0 100%);
@@ -103,13 +121,13 @@ body {
 .package__block::before {
   content: "";
   position: absolute;
-  top: -13px;
-  left: -34px;
-  width: 77px;
-  height: 43px;
+  top: -0.83125rem;
+  left: -2.125rem;
+  width: 4.8125rem;
+  height: 2.6875rem;
   background: transparent;
   border-bottom: 4px solid #1698d9;
-  transform: rotate(-47deg);
+  transform: rotate(-46.5deg);
 }
 .package__block:hover {
   border: 4px solid #2ea8e6;
@@ -125,27 +143,39 @@ body {
 }
 
 .package__text {
-  padding: 24px 0 15px 49px;
+  padding: 1.5rem 0 0.9375rem 3.0625rem;
   font-size: 16px;
   color: #666666;
+  font-family: TrebuchetMS;
 }
 
 .package__title {
-  padding: 0 64px 0 49px;
+  padding: 0 4rem 0 3.0625rem;
+  font-family: TrebuchetMS-Bold;
   font-weight: bold;
+}
+.package__title span {
+  font-size: 1.5rem;
 }
 
 .package__description {
-  padding: 16px 120px 33px 49px;
-  height: 55px;
+  padding: 1rem 7.5rem 2.0625rem 3.0625rem;
+  color: #666666;
+  height: 3.4375rem;
+  font-family: TrebuchetMS;
+}
+.package__description span {
+  color: #666666;
+  font-family: TrebuchetMS-Bold;
+  font-size: 0.875rem;
 }
 
 .weight {
   position: absolute;
-  bottom: 27px;
-  right: 15px;
-  width: 81px;
-  height: 81px;
+  bottom: 1.6875rem;
+  right: 0.9375rem;
+  width: 5.0625rem;
+  height: 5.0625rem;
   border-radius: 50%;
   background: #1698d9;
 }
@@ -160,15 +190,23 @@ body {
 }
 
 .numeral {
-  font-size: 42px;
+  font-family: TrebuchetMS;
+  font-size: 2.625rem;
+  font-weight: 400;
+}
+
+.units {
+  font-size: 1.3125rem;
+  font-family: TrebuchetMS;
+  font-weight: 400;
 }
 
 .note {
   text-align: center;
-  padding-top: 15px;
+  padding-top: 0.9375rem;
   color: #fff;
   font-size: 13px;
-  font-weight: bold;
+  font-family: TrebuchetMS;
 }
 
 .colortext {

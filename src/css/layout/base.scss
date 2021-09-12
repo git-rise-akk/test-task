@@ -17,14 +17,12 @@ img {
     display: block;
 }
 
-@mixin tablets {
-    @media screen and (max-width: 768px) {
-        @content;
-    }
+@function rem($px) {
+    @return $px / 16px + 0rem;
 }
 
-@mixin tablets-672 {
-    @media screen and (max-width: 672px) {
+@mixin tablets {
+    @media screen and (max-width: 768px) {
         @content;
     }
 }

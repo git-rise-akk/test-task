@@ -1,25 +1,44 @@
+.title {
+    text-align: center;
+    font-size: rem(36px);
+    color: #ffffff;
+    padding: rem(47px) 0 rem(23px);
+}
+
 .packages {
     margin: 0 auto;
-    max-width: 1120px;
+    max-width: rem(1120px);
+    padding: 0 rem(30px);
 
     @include tablets {
-        height: 1127px;
+        height: rem(1127px);
         display: flex;
+    }
+
+    @include phones {
+        padding: 0 rem(20px);
     }
 }
 
 .package {
     
+
+    &:first-child,
+    &:nth-child(2) {
+        margin-bottom: 2rem;  
+    }   
+    
     @include tablets {
+        margin: 0 rem(10px);
+
         &:nth-child(2) {
             align-self: flex-start;
         }
     }
 
-    @include tablets {
-        margin-bottom: 20px;
+    @include phones {
+        margin: 0 auto;
     }
-
 }
 
 .packages__list {
@@ -28,22 +47,19 @@
     flex-wrap: wrap;
 
     @include tablets {
-        align-items: flex-end;
-    }
-
-    @include tablets-672 {
-        display: block;
-        margin: 0 auto; 
-    }
+        justify-content: center;
+    } 
 }
 
 .package__block {
     text-align: left;
-    max-width: 320px;
+    max-width: rem(320px);
     background: #fff;
     border: 4px solid #1698d9;
-    border-radius: 10px;
+    border-radius: rem(10px);
     position: relative;
+
+    
 
     @include phones {
         margin: 0 auto;
@@ -52,13 +68,13 @@
     &::before {
         content: '';
         position: absolute;
-        top: -13px;
-        left: -34px;
-        width: 77px;
-        height: 43px;
+        top: rem(-13.3px);
+        left: rem(-34px);
+        width: rem(77px);
+        height: rem(43px);
         background: transparent;
         border-bottom: 4px solid #1698d9;
-        transform: rotate(-47deg)
+        transform: rotate(-46.5deg)
     }
 
     clip-path: 
@@ -93,27 +109,41 @@
 }
 
 .package__text {
-    padding: 24px 0 15px 49px;
+    padding: rem(24px) 0 rem(15px) rem(49px);
     font-size: 16px;
     color: #666666;
+    font-family: TrebuchetMS;
 }
 
 .package__title  {
-    padding: 0 64px 0 49px ;
+    padding: 0 rem(64px) 0 rem(49px);
+    font-family: TrebuchetMS-Bold;
     font-weight: bold;
+
+    span {
+        font-size: rem(24px);
+    }
 }
 
 .package__description {
-    padding: 16px 120px 33px 49px;
-    height: 55px;
+    padding: rem(16px) rem(120px) rem(33px) rem(49px);
+    color: #666666;
+    height: rem(55px);
+    font-family: TrebuchetMS;
+
+    span{
+        color: #666666;
+        font-family: TrebuchetMS-Bold;
+        font-size: rem(14px);
+    }
 }
 
 .weight {
     position: absolute;
-    bottom: 27px;
-    right: 15px;
-    width: 81px;
-    height: 81px;
+    bottom: rem(27px);
+    right: rem(15px);
+    width: rem(81px);
+    height: rem(81px);
     border-radius: 50%;
     background: #1698d9;
 
@@ -131,15 +161,23 @@
 }
 
 .numeral {
-    font-size: 42px;
+    font-family: TrebuchetMS;
+    font-size: rem(42px);
+    font-weight: 400;
+}
+
+.units {
+    font-size: rem(21px);
+    font-family: TrebuchetMS;
+    font-weight: 400;
 }
 
 .note {
     text-align: center;
-    padding-top: 15px;
+    padding-top: rem(15px);
     color: #fff;
     font-size: 13px;
-    font-weight: bold;
+    font-family: TrebuchetMS;
 }
 
 .colortext {
@@ -212,10 +250,8 @@
         background: #fff;
         opacity: 0.5;
     }
-
     
 }
-
 
 
 
