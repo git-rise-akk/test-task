@@ -1,56 +1,3 @@
-body, html {
-  height: 100%;
-}
-
-body {
-  font-family: Roboto Regular;
-  margin: 0;
-}
-
-.wrapper {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-}
-.wrapper .wrapper__content {
-  width: 100%;
-  height: 100%;
-}
-
-ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-}
-
-img {
-  display: block;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@font-face {
-  font-family: "Roboto Regular";
-  src: url("../fonts/Roboto-Medium.eot");
-  src: url("../fonts/Roboto-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Medium.woff") format("woff"), url("../fonts/Roboto-Medium.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Roboto Medium";
-  src: url("../fonts/Roboto-Medium.eot");
-  src: url("../fonts/Roboto-Medium?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Medium.woff") format("woff"), url("../fonts/Roboto-Medium.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
 .header {
   height: 5rem;
   width: 100%;
@@ -456,20 +403,4 @@ a {
 .wrapper__content.menu__open .bg__menu {
   background: #000;
   opacity: 0.5;
-}
-
-.home__frame {
-  width: 100%;
-  height: 100%;
-}
-.home__frame .img__home {
-  position: absolute;
-  left: 0;
-  top: 0;
-  background-image: url(../img/alpaca.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 100%;
 }

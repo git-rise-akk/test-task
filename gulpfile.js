@@ -13,14 +13,14 @@ let patch = {
         html: [source_folder +'/*.html', "!" + source_folder + "/_*.html"],
         css: source_folder + '/css/**.scss',
         js: source_folder + '/js/main.js',
-        img: source_folder + '/img/*.{jpg,png}',
+        img: source_folder + '/img/*.{jpg,png,svg}',
         fonts: source_folder + '/fonts/*',
     },
     watch: {
         html: source_folder +'/**/*.html',
         css: source_folder + '/css/**/*.scss',
         js: source_folder + '/js/main.js',
-        img: source_folder + '/img/*.{jpg,png}',
+        img: source_folder + '/img/*.{jpg,png,svg}',
     },
     clean: './' + projects_folder + '/'
 };
